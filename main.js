@@ -30,8 +30,11 @@ var sort = items.filter (function(item){
 });
 
 // console.log(question2);
+question2.forEach(function(item){
+document.querySelector('#answer2').textContent = item;
+});
 
-document.querySelector('#answer2').textContent = question2;
+
 
 // question 3:
 

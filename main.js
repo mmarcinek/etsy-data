@@ -31,7 +31,7 @@ var sort = items.filter (function(item){
 
 // console.log(question2);
 question2.forEach(function(item){
-document.querySelector('#answer2').textContent = item;
+document.querySelector('#answer2').textContent = item + '\n';
 });
 
 
@@ -46,12 +46,28 @@ var pounds = items.filter (function(item){
   }
 });
 
-// console.log(question3);
+console.log(question3);
 
-// document.querySelector('#answer3').textContent = question3;
+document.querySelector('#answer3').textContent = question3 ;
 
 // var answer3 = document.querySelector('#answer3');
 // answer3.innerText = '';
 // items.forEach( function (item) {
 //   answer3.appendChild(document.createTextNode(item.title + " costs £" + item.price));
 // });
+
+// question 4:
+
+var ofWood = [];
+
+items.filter( function(item) {
+  item.materials.forEach (function(item2) {
+    if (item2 === "wood") {
+    ofWood.push(item.title)
+    }
+  });
+});
+
+
+
+

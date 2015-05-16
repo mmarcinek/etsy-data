@@ -29,11 +29,14 @@ var sort = items.filter (function(item){
   }
 });
 
-// console.log(question2);
-question2.forEach(function(item){
-document.querySelector('#answer2').textContent = item + '\n';
-});
+// Output to DOM:
 
+var answer2 = document.querySelector('#answer2');
+answer2.innerText = "";
+
+question2.forEach(function(listings) {
+  answer2.appendChild(document.createTextNode(listings + '\n\n'));
+});
 
 
 // question 3:
@@ -42,31 +45,70 @@ var question3 = [];
 
 var pounds = items.filter (function(item){
   if(item.currency_code === "GBP") {
-    question3.push(item.title, item.price);
+    question3.push(item.title + " costs £" + item.price);
   }
 });
 
-console.log(question3);
+// console.log(question3);
+
+// Output to DOM:
 
 document.querySelector('#answer3').textContent = question3 ;
 
-// var answer3 = document.querySelector('#answer3');
-// answer3.innerText = '';
-// items.forEach( function (item) {
-//   answer3.appendChild(document.createTextNode(item.title + " costs £" + item.price));
-// });
 
 // question 4:
 
 var ofWood = [];
 
-items.filter( function(item) {
+items.filter(function(item) {
   item.materials.forEach (function(item2) {
     if (item2 === "wood") {
     ofWood.push(item.title)
     }
   });
 });
+
+// console.log(ofWood);
+
+// Output to DOM:
+
+var answer4 = document.querySelector('#answer4');
+answer4.innerText = "";
+
+ofWood.forEach(function(listings) {
+  answer4.appendChild(document.createTextNode(listings + '\n\n'))
+});
+
+// question 5:
+var moreMaterials = [];
+
+items.filter(function(item) {
+  if(items.materials >= 8){
+    moreMaterials.push(item.title, moreMaterials.length + items.materials);
+  }
+})
+
+console.log(moreMaterials);
+
+
+// question 6:
+
+var iMade = [];
+
+var bySeller = items.filter (function(item){
+  if(item.who_made === "i_did"){
+    iMade.push(item.title)
+  }
+});
+
+// Output to DOM:
+document.querySelector('#answer6').textContent = iMade.length + " were made by their sellers";
+
+
+
+
+
+
 
 
 

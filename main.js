@@ -86,20 +86,20 @@ var moreMaterial = [];
 items.filter(function(items){
   if(items.materials.length >= 8) {
     moreMaterial.push(items);
-    // moreMaterial.push(items.title + " has " + items.materials.length + " materials:" + '\n' + items.materials);
   }
 });
 
 console.log(moreMaterial);
 
+// Output to DOM:
+
 var answer5 = document.querySelector('#answer5');
 answer5.innerText = "";
 
 moreMaterial.forEach(function(items){
-  answer5.appendChild(document.createTextNode(items.title + " has " + items.materials.length + " materials:" + '\n' + items.materials))
+  answer5.appendChild(document.createTextNode(items.title + " has " + items.materials.length + " materials:" + '\n\n' + items.materials.join('\n') + '\n\n'))
 });
 
-// document.querySelector('#answer5').textContent = moreMaterial + '\n';
 
 // question 6:
 

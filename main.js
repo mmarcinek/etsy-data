@@ -89,8 +89,6 @@ items.filter(function(items){
   }
 });
 
-console.log(moreMaterial);
-
 // Output to DOM:
 
 var answer5 = document.querySelector('#answer5');

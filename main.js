@@ -80,16 +80,25 @@ ofWood.forEach(function(listings) {
 });
 
 // question 5:
-var moreMaterials = [];
+// items.filter(function(items){
+var moreMaterial = [];
 
-items.filter(function(item) {
-  if(items.materials >= 8){
-    moreMaterials.push(item.title, moreMaterials.length + items.materials);
+items.filter(function(items){
+  if(items.materials.length >= 8) {
+    moreMaterial.push(items.title + " has " + items.materials.length + " materials:" + '\n' + items.materials);
   }
-})
+});
 
-console.log(moreMaterials);
+console.log(moreMaterial);
 
+document.querySelector('#answer5').textContent = moreMaterial + '\n';
+
+// var answer5 = document.querySelector('#answer6');
+// answer5.innerText = "";
+
+// moreMaterial.forEach(function(listings){
+//   answer5.appendChild(document.createTextNode(listings + " has " + listings.length + " materials:" + '\n' + listings.materials))
+// });
 
 // question 6:
 
